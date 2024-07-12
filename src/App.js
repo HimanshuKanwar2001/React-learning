@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 
 
 //Custom Hooks
 function useFormInputs(intialValue){   //custom hooks are start with "use" in a function
-  const [value,setValue]=useState('');  //it should use hook inside the function and the function act as a constructor
+  const [value,setValue]=useState(intialValue);  //it should use hook inside the function and the function act as a constructor
 
   function handleChange(e){
     setValue(e.target.value);
@@ -16,6 +16,9 @@ function useFormInputs(intialValue){   //custom hooks are start with "use" in a 
   }
 }
 
+//Rules to follow while using Hooks 
+// 1) use hooks on the top of the function  and never use hooks inside the if condtion ,for loop or nested function
+// we cannout use hooks inside class component
 
 function LoginForm(){
   const email=useFormInputs('');
